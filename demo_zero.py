@@ -15,7 +15,7 @@ import models_mae_cross
 from util.misc import measure_time
 
 
-assert "0.4.5" <= timm.__version__ <= "0.4.9"  # version check
+assert timm.__version__ >= "0.4.5"  # version check
 device = torch.device('cuda')
 shot_num = 0
 
