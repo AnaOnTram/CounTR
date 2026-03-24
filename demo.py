@@ -32,7 +32,7 @@ class measure_time(object):
 
 
 def load_image():
-    im_dir = '/home/ross/CounTR'
+    im_dir = 'home/user/CounTR'
     im_id = 'sample.jpeg'
 
     image = Image.open('{}/{}'.format(im_dir, im_id))
@@ -211,7 +211,7 @@ model = models_mae_cross.__dict__['mae_vit_base_patch16'](norm_pix_loss='store_t
 model.to(device)
 model_without_ddp = model
 
-checkpoint = torch.load('/home/ross/CounTR/FSC147.pth', map_location='cpu', weights_only=False)
+checkpoint = torch.load('.FSC147.pth', map_location='cpu', weights_only=False)
 model_without_ddp.load_state_dict(checkpoint['model'], strict=False)
 print("Resume checkpoint %s" % './output_allnew_dir/checkpoint-400.pth')
 
