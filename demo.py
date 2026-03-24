@@ -211,7 +211,7 @@ model = models_mae_cross.__dict__['mae_vit_base_patch16'](norm_pix_loss='store_t
 model.to(device)
 model_without_ddp = model
 
-checkpoint = torch.load('/home/ross/CounTR/FSC147.pth', map_location='cpu')
+checkpoint = torch.load('/home/ross/CounTR/FSC147.pth', map_location='cpu', weights_only=False)
 model_without_ddp.load_state_dict(checkpoint['model'], strict=False)
 print("Resume checkpoint %s" % './output_allnew_dir/checkpoint-400.pth')
 
